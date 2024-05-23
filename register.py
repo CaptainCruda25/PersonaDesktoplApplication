@@ -6,7 +6,17 @@ import server
 
 conn = server.conn
 window = Tk()
-window.geometry("650x690")
+height = 650
+width = 690
+
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+
+x = (screen_width / 2)-(width / 2)
+y = (screen_height / 4) - (height / 4)
+
+window.geometry(f"{width}x{height}+{int(x)}+{int(y)}")
+
 window.title("Register")
 window.configure(bg = "#333333")
 window.resizable(False, False)

@@ -8,7 +8,16 @@ from mysql.connector import Error
 conn = server.conn
 window = Tk()
 window.title("Login")
-window.geometry("650x550")
+
+height = 650
+width = 550
+
+screen_height = window.winfo_screenheight()
+screen_width = window.winfo_screenwidth()
+
+x = (screen_width / 3) - (width / 3)
+y = (screen_height /2) - (height / 2)
+window.geometry(f"{height}x{width}+{int(x)}+{int(y)}")
 window.configure(bg="#333333")
 
 
